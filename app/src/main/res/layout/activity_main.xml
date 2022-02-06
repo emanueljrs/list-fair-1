@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/item_name"
+        android:nextFocusRight="@id/editQuantity"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/editQuantity"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/editQuantity"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/quantity"
+        android:inputType="number"
+        android:nextFocusRight="@id/editValue"
+        android:imeOptions="actionNext"
+        app:layout_constraintLeft_toRightOf="@+id/editName"
+        app:layout_constraintRight_toLeftOf="@id/editValue"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editValue"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/value"
+        android:inputType="numberDecimal"
+        android:nextFocusForward="@id/buttonAdd"
+        android:imeOptions="actionDone"
+        app:layout_constraintLeft_toRightOf="@id/editQuantity"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Total R$"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/editName"
+        app:layout_constraintTop_toBottomOf="@id/editName" />
+
+    <TextView
+        android:id="@+id/textQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Quantidade itens: "
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/textTotal"
+        app:layout_constraintTop_toBottomOf="@id/textTotal" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/button_add"
+        app:layout_constraintRight_toRightOf="@id/editValue"
+        app:layout_constraintTop_toBottomOf="@id/editValue"
+         />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/item_list_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonAdd"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">List Fair</string>
+    <string name="item_name">Item name</string>
+    <string name="quantity">qntd</string>
+    <string name="value">R$</string>
+    <string name="button_add">Add</string>
+</resources>
